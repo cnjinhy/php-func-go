@@ -1,0 +1,6 @@
+.idea
+vendor/
+main
+config/
+log/
+*.log
