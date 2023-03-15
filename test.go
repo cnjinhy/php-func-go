@@ -14,6 +14,8 @@ func main() {
 
 	d := php.Explode(",", "1,2,3,4,5")
 	php.Echo(php.Implode(":", d))
-	php.Echo(php.FileGetContents("https://www.baidu.com"))
+	//php.Echo(php.FileGetContents("https://www.baidu.com"))
 	php.Echo(php.StrToUpper("jjjffff"))
+
+	php.Echo(php.MbStrlen("您好1"))
 }
