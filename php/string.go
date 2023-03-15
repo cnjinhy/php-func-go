@@ -69,6 +69,27 @@ func MbStrlen(str string) (strlen int) {
 	return runesLength
 }
 
+func Strlen(str string) (strlen int) {
+	return len(str)
+}
+
+func Strrev(str string) string {
+	runes := []rune(str)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+}
+
+func Strpos(haystack string, needle string) interface{} {
+	index := strings.Index(haystack, needle)
+	if index == -1 {
+		return false
+	} else {
+		return index
+	}
+}
+
 func Implode(glue string, pieces []string) string {
 	return strings.Join(pieces, glue)
 }
