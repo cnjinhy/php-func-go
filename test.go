@@ -20,4 +20,5 @@ func main() {
 	php.Echo(php.MbStrlen("您好1"))
 	php.Echo(php.Strlen("您好1"))
 	php.Echo(php.CheckDate(12, 100, 2022))
+	php.Echo(php.Trim("\nffff\n"))
 }

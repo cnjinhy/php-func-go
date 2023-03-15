@@ -90,6 +90,17 @@ func Strpos(haystack string, needle string) interface{} {
 	}
 }
 
+func Stripos(haystack string, needle string) interface{} {
+	haystack = StrToLower(haystack)
+	needle = StrToLower(needle)
+	index := strings.Index(haystack, needle)
+	if index == -1 {
+		return false
+	} else {
+		return index
+	}
+}
+
 func Implode(glue string, pieces []string) string {
 	return strings.Join(pieces, glue)
 }
@@ -104,4 +115,14 @@ func StrToLower(s string) string {
 
 func StrToUpper(s string) string {
 	return strings.ToUpper(s)
+}
+
+func Trim(str string, charlist ...string) string {
+	var charsToRemove string
+	if len(charlist) == 0 {
+		charsToRemove = " \t\n\r\x00\x0B"
+	} else {
+		charsToRemove = charlist[0]
+	}
+	return strings.Trim(str, charsToRemove)
 }
