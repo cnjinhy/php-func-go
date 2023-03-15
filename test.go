@@ -9,9 +9,10 @@ func main() {
 	php.Echo(php.Microtime(true))
 	php.Echo(php.Sha1("hehe"))
 	php.Echo(php.MbSubStr("12345", 0, 4))
-
 	php.Echo(php.Base64Encode("haha"))
-
 	php.Echo(php.Base64Decode(php.Base64Encode("haha")))
 
+	d := php.Explode(",", "1,2,3,4,5")
+	php.Echo(php.Implode(":", d))
+	php.Echo(php.FileGetContents("https://www.baidu.com"))
 }

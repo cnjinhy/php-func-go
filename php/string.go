@@ -99,3 +99,11 @@ func MbSubStr(str string, start int, length ...int) (substr string) {
 	}
 	return string(runes[start:end])
 }
+
+func Implode(glue string, pieces []string) string {
+	return strings.Join(pieces, glue)
+}
+
+func Explode(delimiter string, str string) []string {
+	return strings.Split(str, delimiter)
+}
