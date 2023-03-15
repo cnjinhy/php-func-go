@@ -107,3 +107,11 @@ func Implode(glue string, pieces []string) string {
 func Explode(delimiter string, str string) []string {
 	return strings.Split(str, delimiter)
 }
+
+func StrToLower(s string) string {
+	return strings.ToLower(s)
+}
+
+func StrToUpper(s string) string {
+	return strings.ToUpper(s)
+}
