@@ -17,4 +17,16 @@ func TestStrlen(t *testing.T) {
 	if result != expected {
 		t.Errorf("TestStrlen(Hello World) returned %d, expected %d", result, expected)
 	}
+
+	result = php.Strlen("Hello 中国")
+	expected = 12
+	if result != expected {
+		t.Errorf("TestStrlen(Hello 中国) returned %d, expected %d", result, expected)
+	}
+
+	result = php.Strlen("Hello 中国 Hi")
+	expected = 15
+	if result != expected {
+		t.Errorf("TestStrlen(Hello 中国) returned %d, expected %d", result, expected)
+	}
 }
