@@ -1,6 +1,8 @@
 package main
 
-import "phpfunc/php"
+import (
+	"phpfunc/php"
+)
 
 func main() {
 	php.Echo(php.Date("Y年m月d日 H:i:s"))
@@ -21,4 +23,9 @@ func main() {
 	php.Echo(php.Strlen("您好1"))
 	php.Echo(php.CheckDate(12, 100, 2022))
 	php.Echo(php.Trim("\nffff\n"))
+
+	php.Echo(php.Strval(1234))
+
+	php.Echo(php.StrReplace("a", "b", "aabaa"))
+
 }

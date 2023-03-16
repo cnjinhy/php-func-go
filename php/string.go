@@ -3,12 +3,7 @@ package php
 import (
 	"fmt"
 	"strconv"
-	"strings"
 )
-
-func StrReplace(s string, old string, new string) string {
-	return strings.ReplaceAll(s, old, new)
-}
 
 func Echo(args ...interface{}) {
 	for _, arg := range args {
@@ -24,105 +19,4 @@ func Echo(args ...interface{}) {
 		}
 	}
 	fmt.Print("\n")
-}
-
-func SubStr(str string, start int, length ...int) (substr string) {
-	strLength := len(str)
-	if start < 0 {
-		if -start > strLength {
-			start = 0
-		} else {
-			start = strLength + start
-		}
-	} else if start > strLength {
-		return ""
-	}
-	realLength := 0
-	if len(length) > 0 {
-		realLength = length[0]
-		if realLength < 0 {
-			if -realLength > strLength-start {
-				realLength = 0
-			} else {
-				realLength = strLength - start + realLength
-			}
-		} else if realLength > strLength-start {
-			realLength = strLength - start
-		}
-	} else {
-		realLength = strLength - start
-	}
-
-	if realLength == strLength {
-		return str
-	} else {
-		end := start + realLength
-		return str[start:end]
-	}
-}
-
-func MbStrlen(str string) (strlen int) {
-	var (
-		runes       = []rune(str)
-		runesLength = len(runes)
-	)
-	return runesLength
-}
-
-func Strlen(str string) (strlen int) {
-	return len(str)
-}
-
-func Strrev(str string) string {
-	runes := []rune(str)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
-	}
-	return string(runes)
-}
-
-func Strpos(haystack string, needle string) interface{} {
-	index := strings.Index(haystack, needle)
-	if index == -1 {
-		return false
-	} else {
-		return index
-	}
-}
-
-func Stripos(haystack string, needle string) interface{} {
-	haystack = StrToLower(haystack)
-	needle = StrToLower(needle)
-	index := strings.Index(haystack, needle)
-	if index == -1 {
-		return false
-	} else {
-		return index
-	}
-}
-
-func Implode(glue string, pieces []string) string {
-	return strings.Join(pieces, glue)
-}
-
-func Explode(delimiter string, str string) []string {
-	return strings.Split(str, delimiter)
-}
-
-func StrToLower(s string) string {
-	return strings.ToLower(s)
-}
-
-func StrToUpper(s string) string {
-	return strings.ToUpper(s)
-}
-
-func Trim(str string, charlist ...string) string {
-	var charsToRemove string
-	if len(charlist) == 0 {
-		charsToRemove = " \t\n\r\x00\x0B"
-	} else {
-		charsToRemove = charlist[0]
-	}
-	return strings.Trim(str, charsToRemove)
 }

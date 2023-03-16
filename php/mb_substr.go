@@ -5,7 +5,6 @@ func MbSubStr(str string, start int, length ...int) (substr string) {
 		runes       = []rune(str)
 		runesLength = len(runes)
 	)
-
 	strLength := runesLength
 	if start < 0 {
 		if -start > strLength {
