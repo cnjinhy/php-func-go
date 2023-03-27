@@ -1,6 +1,6 @@
 package main
 
-import "php/php"
+import "github.com/cnjinhy/php-func-go/php"
 
 func main() {
 	php.Echo(php.Dirname(php.MAGIC__FILE__()))
