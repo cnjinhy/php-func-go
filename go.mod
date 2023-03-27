@@ -1,3 +1,3 @@
-module phpfunc
+module php
 
 go 1.16
