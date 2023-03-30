@@ -1,8 +1,8 @@
 package tests
 
 import (
+	"github.com/cnjinhy/php-func-go/php"
 	"math/rand"
-	"phpfunc/php"
 	"testing"
 	"time"
 )

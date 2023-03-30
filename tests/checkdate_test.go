@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"phpfunc/php"
+	"github.com/cnjinhy/php-func-go/php"
 	"testing"
 )
 
