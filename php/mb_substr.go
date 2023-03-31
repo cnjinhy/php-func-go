@@ -1,6 +1,6 @@
 package php
 
-func MbSubStr(str string, start int, length ...int) (substr string) {
+func MbSubStr(str string, start int, length ...int) string {
 	var (
 		runes       = []rune(str)
 		runesLength = len(runes)
