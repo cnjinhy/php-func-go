@@ -1,5 +1,5 @@
 package php
 
-func Strlen(str string) (strlen int) {
+func Strlen(str string) int {
 	return len(str)
 }

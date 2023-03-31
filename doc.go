@@ -30,7 +30,8 @@ func main() {
 				//由于PHP的函数大多只有一个返回值,我们处理解析一下
 				funcLines := php.Explode(")", fileLine)
 				argvLines := php.Explode("(", funcLines[0])
-				strInterface := php.StrReplace("{", "", php.Trim(funcLines[1]))
+				search := [...]string{"{", "}"}
+				strInterface := php.StrReplace(search, "", php.Trim(funcLines[1]))
 				returnType = fmt.Sprintf("%s", strInterface)
 				mdStr += "| " + phpFuncName + " | " + goFuncName + " | " + argvLines[1] + " | " + returnType + " |\n"
 			}

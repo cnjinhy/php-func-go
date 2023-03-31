@@ -1,27 +1,37 @@
 package php
 
-import "strings"
+import (
+	"fmt"
+	"reflect"
+	"strings"
+)
 
-func StrReplace(search, replace, subject interface{}) interface{} {
-	switch s := subject.(type) {
-	case string:
-		var r string
-		switch t := replace.(type) {
-		case string:
-			r = strings.Replace(s, search.(string), t, -1)
-		case []string:
-			for _, v := range t {
-				s = strings.Replace(s, search.(string), v, 1)
-			}
-			r = s
+func StrReplace(search interface{}, replace string, subject interface{}) string {
+	sValue := reflect.ValueOf(search)
+	rValue := reflect.ValueOf(replace)
+	subValue := reflect.ValueOf(subject)
+
+	if sValue.Kind() == reflect.Slice || sValue.Kind() == reflect.Array || sValue.Kind() == reflect.Map {
+		sLen := sValue.Len()
+
+		for i := 0; i < sLen; i++ {
+			searchValue := fmt.Sprintf("%v", sValue.Index(i))
+			replaceValue := rValue.String()
+			subjectValue := fmt.Sprintf("%v", subValue)
+
+			subjectValue = strings.Replace(subjectValue, searchValue, replaceValue, -1)
+
+			subValue = reflect.ValueOf(subjectValue)
 		}
-		return r
-	case []string:
-		var r []string
-		for _, v := range s {
-			r = append(r, StrReplace(search, replace, v).(string))
-		}
-		return r
+	} else {
+		searchValue := sValue.String()
+		replaceValue := rValue.String()
+		subjectValue := fmt.Sprintf("%v", subValue)
+
+		subjectValue = strings.Replace(subjectValue, searchValue, replaceValue, -1)
+
+		subValue = reflect.ValueOf(subjectValue)
 	}
-	return ""
+
+	return subValue.String()
 }

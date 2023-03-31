@@ -4,7 +4,7 @@ import (
 	"net/url"
 )
 
-type parseURLInfo struct {
+type urlInfo struct {
 	Scheme   string                 `json:"scheme"`
 	Host     string                 `json:"host"`
 	Port     string                 `json:"port,omitempty"`
@@ -15,7 +15,7 @@ type parseURLInfo struct {
 	Fragment string                 `json:"fragment,omitempty"`
 }
 
-func ParseUrl(urlStr string) *parseURLInfo {
+func ParseUrl(urlStr string) *urlInfo {
 	u, err := url.Parse(urlStr)
 	if err != nil {
 		return nil
@@ -47,7 +47,7 @@ func ParseUrl(urlStr string) *parseURLInfo {
 		port = u.Port()
 	}
 
-	return &parseURLInfo{
+	return &urlInfo{
 		Scheme:   u.Scheme,
 		Host:     u.Hostname(),
 		Port:     port,

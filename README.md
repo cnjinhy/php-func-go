@@ -22,7 +22,7 @@ the README.md is generated using the php-func-go function through doc.go
 | file_exists | FileExists | filename string | bool  |
 | file_get_contents | FileGetContents | filename string | string  |
 | file_put_contents | FilePutContents | filename string, data string, append ...int | bool  |
-| filesize | Filesize | filename string | (int64, error |
+| filesize | Filesize | filename string | int64  |
 | getrandmax | Getrandmax |  | int  |
 | glob | Glob | pattern string | []string  |
 | http_build_query | HttpBuildQuery | data interface{} | string  |
@@ -38,10 +38,10 @@ the README.md is generated using the php-func-go function through doc.go
 | mb_strlen | MbStrlen | str string | (strlen int |
 | md5 | Md5 | args ...interface{} | string  |
 | md5_file | Md5File | path string, prevHash ...string | string  |
-| microtime | Microtime | getAsFloat ...bool | interface}  |
+| microtime | Microtime | getAsFloat ...bool | interface  |
 | mt_rand | MtRand | min int, max int | int  |
 | ord | Ord | s string | int  |
-| parse_url | ParseUrl | urlStr string | *parseURLInfo  |
+| parse_url | ParseUrl | urlStr string | *urlInfo  |
 | preg_replace | PregReplace | pattern string, replacement string, subject string | string  |
 | preg_replace_callback | PregReplaceCallback | pattern string, subject string, callback func | string |
 | print_r | PrintR | vList ...interface{} |  |
@@ -51,13 +51,13 @@ the README.md is generated using the php-func-go function through doc.go
 | sleep | Sleep | seconds int |  |
 | str_contains | StrContains | haystack string, needle string | bool  |
 | str_ends_with | StrEndsWith | haystack string, needle string | bool  |
-| str_replace | StrReplace | search, replace, subject interface{} | interface}  |
+| str_replace | StrReplace | search interface{}, replace string, subject interface{} | string  |
 | str_starts_with | StrStartsWith | haystack string, needle string | bool  |
-| str_word_count | StrWordCount | s string, format ...int | interface}  |
+| str_word_count | StrWordCount | s string, format ...int | interface  |
 | strip_tags | StripTags | s string | string  |
-| stripos | Stripos | haystack string, needle string | interface}  |
-| strlen | Strlen | str string | (strlen int |
-| strpos | Strpos | haystack string, needle string | interface}  |
+| stripos | Stripos | haystack string, needle string | interface  |
+| strlen | Strlen | str string | int  |
+| strpos | Strpos | haystack string, needle string | interface  |
 | strrev | Strrev | str string | string  |
 | strstr | Strstr | s, substr string, options ...bool | string  |
 | strval | Strval | any interface{} | string  |
