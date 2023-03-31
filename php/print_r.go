@@ -7,8 +7,10 @@ import (
 	"strings"
 )
 
-func PrintR(v interface{}) {
-	fmt.Printf("%s\n", printR(v))
+func PrintR(vList ...interface{}) {
+	for _, v := range vList {
+		fmt.Printf("%s\n", printR(v))
+	}
 }
 
 func printR(v interface{}) string {
