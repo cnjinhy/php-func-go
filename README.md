@@ -50,7 +50,7 @@ You can run `go test` in the dir `tests`
 | lcfirst | Lcfirst | str string | string  |
 | lcg_value | LcgValue |  | float64  |
 | ltrim | Ltrim | s string, charsToRemove ...string | string  |
-| mb_strlen | MbStrlen | str string | (strlen int |
+| mb_strlen | MbStrlen | str string | int  |
 | md5 | Md5 | args ...interface{} | string  |
 | md5_file | Md5File | path string, prevHash ...string | string  |
 | microtime | Microtime | getAsFloat ...bool | interface  |
