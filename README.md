@@ -3,8 +3,14 @@
 #### Description
 Some `PHP` built-in functions implemented using Golang
 
+#### 描述
+使用golang实现的一些PHP函数，方便开发使用。
+
 #### Demo
 the `README.md` is generated using the `php-func-go` function by `doc.go`
+
+#### 示例
+`README.md`文件是通过`doc.go`生成的，`doc.go`使用了php-func-go的函数写的。
 
 #### Unit Test
 You can run `go test` in the dir `tests`
@@ -25,6 +31,7 @@ You can run `go test` in the dir `tests`
 | date | Date | format string, timestamp ...interface{} | string  |
 | dirname | Dirname | path string, levels ...int | string  |
 | echo | Echo | args ...interface{} |  |
+| empty | Empty | val interface{} | bool  |
 | explode | Explode | delimiter string, str string | []string  |
 | file_exists | FileExists | filename string | bool  |
 | file_get_contents | FileGetContents | filename string | string  |
