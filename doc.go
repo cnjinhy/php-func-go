@@ -10,8 +10,8 @@ import (
 func main() {
 	var mdStr string
 	mdStr += "# php-func-go\n\n"
-	mdStr += "#### Description\nSome PHP built-in functions implemented using Golang\n\n"
-	mdStr += "#### Demo\nthe README.md is generated using the php-func-go function by doc.go\n\n"
+	mdStr += "#### Description\nSome `PHP` built-in functions implemented using Golang\n\n"
+	mdStr += "#### Demo\nthe `README.md` is generated using the `php-func-go` function by `doc.go`\n\n"
 	mdStr += "#### Unit Test\nYou can run `go test` in the dir `tests`\n\n"
 	mdStr += "#### Function list\n"
 	mdStr += "| php function | golang function | input argvs | return type |\n"

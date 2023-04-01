@@ -1,10 +1,10 @@
 # php-func-go
 
 #### Description
-Some PHP built-in functions implemented using Golang
+Some `PHP` built-in functions implemented using Golang
 
 #### Demo
-the README.md is generated using the php-func-go function by doc.go
+the `README.md` is generated using the `php-func-go` function by `doc.go`
 
 #### Unit Test
 You can run `go test` in the dir `tests`
