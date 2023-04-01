@@ -1,8 +1,15 @@
-#### php-func-go
+# php-func-go
+
+#### Description
 Some PHP built-in functions implemented using Golang
-#### description
-the README.md is generated using the php-func-go function through doc.go
-#### function list
+
+#### Demo
+the README.md is generated using the php-func-go function by doc.go
+
+#### Unit Test
+You can run `go test` in the dir `tests`
+
+#### Function list
 | php function | golang function | input argvs | return type |
 |-------------|--------------|----------------------|--------|
 | addslashes | Addslashes | s string | string  |
@@ -24,6 +31,7 @@ the README.md is generated using the php-func-go function through doc.go
 | file_put_contents | FilePutContents | filename string, data string, append ...int | bool  |
 | filesize | Filesize | filename string | int64  |
 | getrandmax | Getrandmax |  | int  |
+| gettype | Gettype | any interface{} | string  |
 | glob | Glob | pattern string | []string  |
 | http_build_query | HttpBuildQuery | data interface{} | string  |
 | implode | Implode | glue string, pieces []string | string  |
