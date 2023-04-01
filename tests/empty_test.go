@@ -81,7 +81,7 @@ func TestEmpty(t *testing.T) {
 	result = php.Empty(test8)
 	expected = false
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test8) returned %t, expected %t", result, expected)
 	}
 
 	test81 := make(map[string]interface{})
@@ -89,7 +89,7 @@ func TestEmpty(t *testing.T) {
 	result = php.Empty(test81["b"])
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test81) returned %t, expected %t", result, expected)
 	}
 
 	test82 := make(map[string]interface{})
@@ -97,7 +97,7 @@ func TestEmpty(t *testing.T) {
 	result = php.Empty(test81["b"])
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test82) returned %t, expected %t", result, expected)
 	}
 
 	test83 := make(map[string]map[string]int)
@@ -107,38 +107,38 @@ func TestEmpty(t *testing.T) {
 	result = php.Empty(test83["b"])
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test83) returned %t, expected %t", result, expected)
 	}
 
 	result = php.Empty(test83["a"])
 	expected = false
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test83-a) returned %t, expected %t", result, expected)
 	}
 
 	result = php.Empty(test83["a"]["t"])
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test83-a-t) returned %t, expected %t", result, expected)
 	}
 
 	result = php.Empty(test83["a"]["s"])
 	expected = false
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test83-a-s) returned %t, expected %t", result, expected)
 	}
 
 	result = php.Empty(test83["a"]["ss"])
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test83-a-ss) returned %t, expected %t", result, expected)
 	}
 
 	test9 := make(map[string]interface{})
 	result = php.Empty(test9)
 	expected = true
 	if result != expected {
-		t.Errorf("TestEmpty(test7) returned %t, expected %t", result, expected)
+		t.Errorf("TestEmpty(test9) returned %t, expected %t", result, expected)
 	}
 
 }
