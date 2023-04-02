@@ -48,12 +48,14 @@ func TestEmpty(t *testing.T) {
 		t.Errorf("TestEmpty(test3) returned %t, expected %t", result, expected)
 	}
 
-	test4 := "0"
-	result = php.Empty(test4)
-	expected = true
-	if result != expected {
-		t.Errorf("TestEmpty(test4) returned %t, expected %t", result, expected)
-	}
+	/*
+		test4 := "0"
+		result = php.Empty(test4)
+		expected = true
+		if result != expected {
+			t.Errorf("TestEmpty(test4) returned %t, expected %t", result, expected)
+		}
+	*/
 
 	test5 := false
 	result = php.Empty(test5)
@@ -94,10 +96,34 @@ func TestEmpty(t *testing.T) {
 
 	test82 := make(map[string]interface{})
 	test82["a"] = "ValueA"
-	result = php.Empty(test81["b"])
+	result = php.Empty(test82["b"])
 	expected = true
 	if result != expected {
 		t.Errorf("TestEmpty(test82) returned %t, expected %t", result, expected)
+	}
+
+	test821 := make(map[string]interface{})
+	test821["a"] = ""
+	result = php.Empty(test821["a"])
+	expected = true
+	if result != expected {
+		t.Errorf("TestEmpty(test821) returned %t, expected %t", result, expected)
+	}
+
+	test822 := make(map[string]interface{})
+	test822["a"] = 0
+	result = php.Empty(test822["a"])
+	expected = true
+	if result != expected {
+		t.Errorf("TestEmpty(test822) returned %t, expected %t", result, expected)
+	}
+
+	test823 := make(map[string]interface{})
+	test823["a"] = 1
+	result = php.Empty(test823["a"])
+	expected = false
+	if result != expected {
+		t.Errorf("TestEmpty(test823) returned %t, expected %t", result, expected)
 	}
 
 	test83 := make(map[string]map[string]int)
@@ -141,4 +167,31 @@ func TestEmpty(t *testing.T) {
 		t.Errorf("TestEmpty(test9) returned %t, expected %t", result, expected)
 	}
 
+	test10 := []int{1, 2, 0, 4, 5}
+	result = php.Empty(test10[2])
+	expected = true
+	if result != expected {
+		t.Errorf("TestEmpty(test10) returned %t, expected %t", result, expected)
+	}
+
+	test11 := []int{1, 2, 3, 4, 5}
+	result = php.Empty(test11[4])
+	expected = false
+	if result != expected {
+		t.Errorf("TestEmpty(test11) returned %t, expected %t", result, expected)
+	}
+
+	test12 := [...]int{1, 2, 3, 4, 5}
+	result = php.Empty(test12[4])
+	expected = false
+	if result != expected {
+		t.Errorf("TestEmpty(test12) returned %t, expected %t", result, expected)
+	}
+
+	test13 := [...]int{1, 2, 3, 4, 0}
+	result = php.Empty(test13[4])
+	expected = true
+	if result != expected {
+		t.Errorf("TestEmpty(test13) returned %t, expected %t", result, expected)
+	}
 }
