@@ -10,7 +10,7 @@ Note: Due to the language features of `Golang` and `PHP`, some functions are not
 注意：由于`Golang`和`PHP`的语言特性，有些函数并不是100%兼容，比如Golang中的map是无序的，当使用`http_build_query`的时候有可能输出顺序不一致，比如Golang中的数组不能越界访问，所以empty也有所限制，等等。
 
 #### Demo
-the `README.md` is generated using the `php-func-go` function by `doc.go`
+the `README.md` is generated using the `php-func-go` function by [doc.go](https://github.com/cnjinhy/php-func-go/blob/master/doc.go)
 
 `README.md`文件是通过`doc.go`生成的，`doc.go`使用了php-func-go的函数写的。
 
