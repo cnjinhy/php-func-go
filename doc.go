@@ -10,10 +10,10 @@ import (
 func main() {
 	var mdStr string
 	mdStr += "# php-func-go\n\n"
-	mdStr += "#### Description\nSome `PHP` built-in functions implemented using Golang\n使用golang实现的一些PHP函数，方便开发使用。\n"
-	mdStr += "Note: Due to the language features of `Golang` and `PHP`, some functions are not 100% compatible. For example, the maps in Golang are unordered, and when using `http_ build_query`, the output order may be inconsistent. For example, arrays in Golang cannot be accessed outside the bounds, so there are restrictions on `empty`, and so on.\n"
+	mdStr += "#### Description\nSome `PHP` built-in functions implemented using Golang\n\n使用golang实现的一些PHP函数，方便开发使用。\n\n"
+	mdStr += "Note: Due to the language features of `Golang` and `PHP`, some functions are not 100% compatible. For example, the maps in Golang are unordered, and when using `http_ build_query`, the output order may be inconsistent. For example, arrays in Golang cannot be accessed outside the bounds, so there are restrictions on `empty`, and so on.\n\n"
 	mdStr += "注意：由于`Golang`和`PHP`的语言特性，有些函数并不是100%兼容，比如Golang中的map是无序的，当使用`http_build_query`的时候有可能输出顺序不一致，比如Golang中的数组不能越界访问，所以empty也有所限制，等等。\n\n"
-	mdStr += "#### Demo\nthe `README.md` is generated using the `php-func-go` function by `doc.go`\n"
+	mdStr += "#### Demo\nthe `README.md` is generated using the `php-func-go` function by `doc.go`\n\n"
 	mdStr += "`README.md`文件是通过`doc.go`生成的，`doc.go`使用了php-func-go的函数写的。\n\n"
 	mdStr += "#### Unit Test\nYou can run `go test` in the dir `tests`\n\n"
 	mdStr += "#### Function list\n"
