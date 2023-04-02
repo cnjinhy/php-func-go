@@ -24,10 +24,12 @@ func Empty(val interface{}) bool {
 	)
 
 	switch reflect.TypeOf(val).Kind() {
-	case reflect.Slice, reflect.Array, reflect.Map:
+	case reflect.Slice, reflect.Array:
+		return reflect.ValueOf(val).Len() == 0
+	case reflect.Map:
 		return reflect.ValueOf(val).Len() == 0
 	case reflect.String:
-		return len(val.(string)) == 0 || val.(string) == "0"
+		return len(val.(string)) == 0
 	case reflect.Ptr:
 		return Empty(reflect.ValueOf(val).Elem().Interface())
 	case reflect.Struct:
