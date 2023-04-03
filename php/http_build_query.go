@@ -2,16 +2,21 @@ package php
 
 import (
 	"fmt"
+	"github.com/elliotchance/orderedmap"
 	"reflect"
 	"strings"
 )
 
+func isOrderedMap(v interface{}) bool {
+	_, ok := v.(*orderedmap.OrderedMap)
+	return ok
+}
+
 func HttpBuildQuery(data interface{}) string {
 	values := reflect.ValueOf(data)
-	if values.Kind() != reflect.Map && values.Kind() != reflect.Struct {
+	if values.Kind() != reflect.Map && values.Kind() != reflect.Struct && values.Kind() != reflect.Ptr {
 		panic("http_build_query: data must be a map or struct")
 	}
-
 	var buf strings.Builder
 	switch values.Kind() {
 	case reflect.Map:
@@ -32,6 +37,20 @@ func HttpBuildQuery(data interface{}) string {
 			buf.WriteByte('=')
 			buf.WriteString(urlencode(fmt.Sprintf("%v", values.Field(i))))
 		}
+	case reflect.Ptr:
+		_, ok := data.(*orderedmap.OrderedMap)
+		if ok {
+			for _, key := range data.(*orderedmap.OrderedMap).Keys() {
+				value, _ := data.(*orderedmap.OrderedMap).Get(key)
+				if buf.Len() > 0 {
+					buf.WriteByte('&')
+				}
+				buf.WriteString(urlencode(Strval(key)))
+				buf.WriteByte('=')
+				buf.WriteString(urlencode(fmt.Sprintf("%v", Strval(value))))
+			}
+		}
+
 	}
 
 	return buf.String()

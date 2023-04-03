@@ -2,6 +2,7 @@ package php
 
 import (
 	"fmt"
+	"github.com/elliotchance/orderedmap"
 	"reflect"
 	"strconv"
 	"strings"
@@ -10,6 +11,15 @@ import (
 const indent = "    "
 
 func VarDump(v interface{}) {
+	//有序map 单独处理 不兼容
+	_, ok := v.(*orderedmap.OrderedMap)
+	if ok {
+		for _, key := range v.(*orderedmap.OrderedMap).Keys() {
+			value, _ := v.(*orderedmap.OrderedMap).Get(key)
+			fmt.Println(key, value)
+		}
+		return
+	}
 	fmt.Printf("%s\n", varDump(v))
 }
 
