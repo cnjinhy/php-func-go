@@ -7,11 +7,6 @@ import (
 	"strings"
 )
 
-func isOrderedMap(v interface{}) bool {
-	_, ok := v.(*orderedmap.OrderedMap)
-	return ok
-}
-
 func HttpBuildQuery(data interface{}) string {
 	values := reflect.ValueOf(data)
 	if values.Kind() != reflect.Map && values.Kind() != reflect.Struct && values.Kind() != reflect.Ptr {
