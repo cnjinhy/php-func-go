@@ -5,6 +5,6 @@ import (
 	"strings"
 )
 
-func RawUrlEncode(str string) string {
+func Rawurlencode(str string) string {
 	return strings.ReplaceAll(url.QueryEscape(str), "+", "%20")
 }

@@ -2,6 +2,6 @@ package php
 
 import "net/url"
 
-func UrlEncode(str string) string {
+func Urlencode(str string) string {
 	return url.QueryEscape(str)
 }

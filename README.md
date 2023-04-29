@@ -61,12 +61,15 @@ You can run `go test` in the dir `tests`
 | parse_url | ParseUrl | urlStr string | *urlInfo  |
 | preg_replace | PregReplace | pattern string, replacement string, subject string | string  |
 | preg_replace_callback | PregReplaceCallback | pattern string, subject string, callback func | string |
+| rawurldecode | Rawurldecode | str string | (string, error |
+| rawurlencode | Rawurlencode | str string | string  |
 | rtrim | Rtrim | s string, charsToRemove ...string | string  |
 | sha1 | Sha1 | s string | string  |
 | sha1_file | Sha1File | filename string, binary ...bool | string  |
 | sleep | Sleep | seconds int |  |
 | str_contains | StrContains | haystack string, needle string | bool  |
 | str_ends_with | StrEndsWith | haystack string, needle string | bool  |
+| str_repeat | StrRepeat | input string, time int | string  |
 | str_replace | StrReplace | search interface{}, replace string, subject interface{} | string  |
 | str_starts_with | StrStartsWith | haystack string, needle string | bool  |
 | str_word_count | StrWordCount | s string, format ...int | interface  |
@@ -84,5 +87,7 @@ You can run `go test` in the dir `tests`
 | trim | Trim | str string, charlist ...string | string  |
 | ucfirst | Ucfirst | s string | string  |
 | ucwords | Ucwords | s string | string  |
+| urldecode | Urldecode | str string | string  |
+| urlencode | Urlencode | str string | string  |
 | usleep | Usleep | microseconds int |  |
 | var_dump | VarDump | v interface{} |  |
