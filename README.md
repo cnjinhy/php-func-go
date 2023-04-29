@@ -61,7 +61,6 @@ You can run `go test` in the dir `tests`
 | parse_url | ParseUrl | urlStr string | *urlInfo  |
 | preg_replace | PregReplace | pattern string, replacement string, subject string | string  |
 | preg_replace_callback | PregReplaceCallback | pattern string, subject string, callback func | string |
-| print_r | PrintR | vList ...interface{} |  |
 | rtrim | Rtrim | s string, charsToRemove ...string | string  |
 | sha1 | Sha1 | s string | string  |
 | sha1_file | Sha1File | filename string, binary ...bool | string  |
