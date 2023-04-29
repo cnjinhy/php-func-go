@@ -30,7 +30,7 @@ func main() {
 			fileLine = php.Trim(fileLine)
 			goFuncDefine := "func " + goFuncName + "("
 			//匹配函数定义行
-			if php.SubStr(fileLine, 0, php.Strlen(goFuncDefine)) == goFuncDefine {
+			if php.StrToLower(php.SubStr(fileLine, 0, php.Strlen(goFuncDefine))) == php.StrToLower(goFuncDefine) {
 				returnType := ""
 				//由于PHP的函数大多只有一个返回值,我们处理解析一下
 				funcLines := php.Explode(")", fileLine)
