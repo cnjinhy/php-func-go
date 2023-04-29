@@ -31,6 +31,7 @@ func main() {
 			goFuncDefine := "func " + goFuncName + "("
 			//匹配函数定义行
 			if php.StrToLower(php.SubStr(fileLine, 0, php.Strlen(goFuncDefine))) == php.StrToLower(goFuncDefine) {
+				goFuncNameReal := php.SubStr(fileLine, 5, php.Strlen(goFuncDefine)-6)
 				returnType := ""
 				//由于PHP的函数大多只有一个返回值,我们处理解析一下
 				funcLines := php.Explode(")", fileLine)
@@ -38,7 +39,7 @@ func main() {
 				search := [...]string{"{", "}"}
 				strInterface := php.StrReplace(search, "", php.Trim(funcLines[1]))
 				returnType = fmt.Sprintf("%s", strInterface)
-				mdStr += "| " + phpFuncName + " | " + goFuncName + " | " + argvLines[1] + " | " + returnType + " |\n"
+				mdStr += "| " + phpFuncName + " | " + goFuncNameReal + " | " + argvLines[1] + " | " + returnType + " |\n"
 			}
 		}
 	}

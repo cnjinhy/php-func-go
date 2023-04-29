@@ -26,7 +26,7 @@ You can run `go test` in the dir `tests`
 | base64_encode | Base64Encode | str string | string  |
 | basename | Basename | path string, suffix ...string | string  |
 | bin2hex | Bin2hex | input string | string  |
-| checkdate | Checkdate | month, day, year int | bool  |
+| checkdate | CheckDate | month, day, year int | bool  |
 | chop | Chop | s string, charsToRemove ...string | string  |
 | chr | Chr | codepoint int | string  |
 | copy | Copy | src string, dest string | bool  |
@@ -39,16 +39,16 @@ You can run `go test` in the dir `tests`
 | file_exists | FileExists | filename string | bool  |
 | file_get_contents | FileGetContents | filename string | string  |
 | file_put_contents | FilePutContents | filename string, data string, append ...int | bool  |
-| filectime | Filectime | path string | int64  |
-| filemtime | Filemtime | path string | int64  |
+| filectime | FileCTime | path string | int64  |
+| filemtime | FileMTime | path string | int64  |
 | filesize | Filesize | filename string | int64  |
 | getrandmax | Getrandmax |  | int  |
 | gettype | Gettype | any interface{} | string  |
 | glob | Glob | pattern string | []string  |
 | html_entity_decode | HtmlEntityDecode | s string | string  |
-| htmlentities | Htmlentities | s string | string  |
-| htmlspecialchars | Htmlspecialchars | s string | string  |
-| htmlspecialchars_decode | HtmlspecialcharsDecode | s string | string  |
+| htmlentities | HtmlEntities | s string | string  |
+| htmlspecialchars | HtmlSpecialChars | s string | string  |
+| htmlspecialchars_decode | HtmlSpecialCharsDecode | s string | string  |
 | http_build_query | HttpBuildQuery | data interface{} | string  |
 | implode | Implode | glue string, pieces []string | string  |
 | in_array | InArray | needle interface{}, haystack interface{}, strict ...bool | bool  |
@@ -60,18 +60,18 @@ You can run `go test` in the dir `tests`
 | lcg_value | LcgValue |  | float64  |
 | ltrim | Ltrim | s string, charsToRemove ...string | string  |
 | mb_strlen | MbStrlen | str string | int  |
-| mb_substr | MbSubstr | str string, start int, length ...int | string  |
+| mb_substr | MbSubStr | str string, start int, length ...int | string  |
 | md5 | Md5 | args ...interface{} | string  |
 | md5_file | Md5File | path string, prevHash ...string | string  |
 | microtime | Microtime | getAsFloat ...bool | interface  |
 | mt_rand | MtRand | min int, max int | int  |
-| nl2br | Nl2br | s string, useXHTML ...bool | string  |
+| nl2br | Nl2Br | s string, useXHTML ...bool | string  |
 | ord | Ord | s string | int  |
 | parse_url | ParseUrl | urlStr string | *urlInfo  |
 | preg_replace | PregReplace | pattern string, replacement string, subject string | string  |
 | preg_replace_callback | PregReplaceCallback | pattern string, subject string, callback func | string |
-| rawurldecode | Rawurldecode | str string | (string, error |
-| rawurlencode | Rawurlencode | str string | string  |
+| rawurldecode | RawUrlDecode | str string | (string, error |
+| rawurlencode | RawUrlEncode | str string | string  |
 | rtrim | Rtrim | s string, charsToRemove ...string | string  |
 | sha1 | Sha1 | s string | string  |
 | sha1_file | Sha1File | filename string, binary ...bool | string  |
@@ -88,11 +88,11 @@ You can run `go test` in the dir `tests`
 | strpos | Strpos | haystack string, needle string | interface  |
 | strrev | Strrev | str string | string  |
 | strstr | Strstr | s, substr string, options ...bool | string  |
-| strtolower | Strtolower | s string | string  |
-| strtotime | Strtotime | dateStr string | int64  |
-| strtoupper | Strtoupper | s string | string  |
+| strtolower | StrToLower | s string | string  |
+| strtotime | StrToTime | dateStr string | int64  |
+| strtoupper | StrToUpper | s string | string  |
 | strval | Strval | any interface{} | string  |
-| substr | Substr | str string, start int, length ...int | (substr string |
+| substr | SubStr | str string, start int, length ...int | (substr string |
 | substr_count | SubstrCount | s, sub string, args ...int | int  |
 | substr_replace | SubstrReplace | str, replace string, start int, length ...int | string  |
 | time | Time |  | int64  |
@@ -100,7 +100,7 @@ You can run `go test` in the dir `tests`
 | trim | Trim | str string, charlist ...string | string  |
 | ucfirst | Ucfirst | s string | string  |
 | ucwords | Ucwords | s string | string  |
-| urldecode | Urldecode | str string | string  |
-| urlencode | Urlencode | str string | string  |
+| urldecode | UrlDecode | str string | string  |
+| urlencode | UrlEncode | str string | string  |
 | usleep | Usleep | microseconds int |  |
 | var_dump | VarDump | v interface{} |  |
